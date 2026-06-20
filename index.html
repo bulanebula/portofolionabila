@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Nabila Husna Aulia | Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: #ededed;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3b3b3b;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ec4899;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 3px solid rgba(236, 72, 153, 0.4);
+      box-shadow: 0 4px 20px rgba(236, 72, 153, 0.08);
+      padding: 5px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ec4899, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #e2e2e2;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ec4899;
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      scroll-margin-top: 65px;
+    }
+
+    #home {
+      scroll-margin-top: 95px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      border-left: 5px solid #ec4899;
+      padding-left: 20px;
+    }
+
+    /* Home */
+    #home {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+    }
+    .home-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .home-content {
+      flex: 2;
+    }
+    .home-content h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #fff, #ec4899);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+    }
+    .home-content .jabatan {
+      display: inline-block;
+      background: rgba(236, 72, 153, 0.2);
+      border: 1px solid #ec4899;
+      border-radius: 40px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      margin: 1rem 0;
+      color: #ec4899;
+    }
+    .home-content p {
+      color: #b0b0b0;
+      margin: 1rem 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #ec4899;
+      border: none;
+      color: #0a0a0a;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: 0.25s;
+    }
+    .btn:hover {
+      background: #be185d;
+      transform: translateY(-3px);
+      color: white;
+    }
+    /* Foto Profile */
+    .profile-photo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .profile-img {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #ec4899;
+      box-shadow: 0 20px 35px -10px rgba(236, 72, 153, 0.4);
+      background: #1e1e2e;
+    }
+
+    /* Tentang */
+    .about-card {
+      background: #121212;
+      border: 1px solid #2a2a2a;
+      border-radius: 24px;
+      padding: 2rem;
+    }
+
+    .about-card p {
+      text-align: justify;
+      color: #b0b0b0;
+      margin-bottom: 1rem;
+    }
+
+    .about-card:hover {
+      border-color: #ec4899;
+      transform: translateY(-5px);
+    }
+
+    /* Pengalaman Organisasi */
+    .org-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .org-card {
+      background: #121212;
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 1px solid #242424;
+      transition: 0.2s;
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+    .org-card:hover {
+      border-color: #ec4899;
+      transform: translateY(-5px);
+    }
+    .org-avatar {
+      flex-shrink: 0;
+      width: 70px;
+      height: 70px;
+      background: #1e1e2e;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid  #ec4899;
+      font-size: 2rem;
+    }
+
+    .org-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .org-detail {
+      flex: 1;
+    }
+    .org-detail h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .org-position {
+      color: #ec4899;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+    .org-date {
+      font-size: 0.7rem;
+      background: rgba(236, 72, 153, 0.15);
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .org-detail p {
+      font-size: 0.85rem;
+      color: #b0b0b0;
+      margin-top: 6px;
+    }
+
+    /* Skills */
+    .skill-card-simple {
+      background: #1e1e2e;
+      padding: 1.8rem 2rem;
+      border-radius: 28px;
+      flex: 1;
+      min-width: 250px;
+      max-width: 400px;
+      transition: 0.2s;
+      border: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+    }
+   
+    .skill-card-simple h3 {
+      font-size: 1.3rem;
+      color: #ec4899;
+      margin-bottom: 1rem;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .skills-badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px; 
+      justify-content: flex-start;
+    }
+
+    .skill-badge {
+      background: #181826; 
+      color: #ededed;
+      padding: 6px 14px;
+      border-radius: 30px; 
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: inline-block;
+      border: 1px solid #333;
+      border-left: 3px solid #ec4899; 
+      box-shadow: -2px 0px 8px rgba(236, 72, 153, 0.2); 
+      transition: 0.2s ease;
+    }
+
+    .skill-badge:hover {
+      background: #222235;
+      transform: translateY(-2px);
+      box-shadow: -3px 2px 10px rgba(236, 72, 153, 0.4);
+    }
+
+    .skill-card-simple:hover {
+      border-color: #ec4899;
+      transform: scale(1.02);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: #121212;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #262626;
+      transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: #ec4899;
+      transform: scale(1.05);
+      
+    }
+    .project-img {
+      height: 150px;
+      background: linear-gradient(135deg, #2a1f2a, #1f1a2e);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ec4899;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.05);
+    }
+
+    .project-info {
+      padding: 1.3rem;
+      display: grid;
+      flex-grow: 1;
+    }
+
+    .project-info h3 {
+      font-size: 1.2rem;
+      color: #ec4899;
+    }
+    
+    .project-info p {
+      color: #aaa;
+      font-size: 0.8rem;
+      min-height: 60px;
+      text-align: justify;
+    }
+
+    .project-info a {
+       color: #ec4899;
+       margin-top: auto;
+       display: inline-block;
+       text-decoration: none;
+    }
+
+    .project-info a:hover { 
+      text-decoration: underline;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0;
+    }
+    .stack {
+      background: #232323;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+    }
+
+    /* Contact */
+    .contact-noform {
+      background: #121212;
+      border-radius: 32px;
+      padding: 2.5rem;
+      text-align: center;
+      border: 1px solid #2c2c2c;
+    }
+
+    .contact-noform h2 {
+      color: #ec4899;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: nowrap;
+      margin: 2rem 0;
+    }
+
+    .contact-icon-link {
+      background: #1e1e2e;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #e2e2e2;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .contact-icon-link:hover {
+      background: #ec4899;
+      color: #0a0a0a;
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: #050505;
+      padding: 30px 0;
+      text-align: center;
+      color: #8a8a8a;
+      font-size: 0.8rem;
+    }
+    .footer-links {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: #ec4899;
+    }
+
+    @media (max-width: 768px) {
+      .home-grid {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .nav-container {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        width: 100%;
+        padding: 4px 10px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 12px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links li {
+        flex-shrink: 0;
+      }
+
+      .nav-links a {
+        font-size: 0.95rem;
+        white-space: nowrap;
+      }
+
+      .profile-img {
+        width: 220px;
+        height: 220px;
+      }
+      .org-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .skills-simple {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .skills-card {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .contact-icons {
+        gap: 15px;
+      }
+
+      .contact-icon-link {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">Nabila Husna Aulia | Portofolio</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#organisasi">Organization</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Home -->
+    <section id="home">
+      <div class="container home-grid">
+        <div class="home-content">
+          <h1>Halo, Saya Nabila Husna Aulia</h1>
+          <div class="jabatan">Information System Student | Graphic Designer | IT Enthusiast</div>
+          <p>Mahasiswa Sistem Informasi yang memiliki minat pada bidang desain grafis, teknologi, dan pengembangan web. 
+            Aktif dalam organisasi kemahasiswaan serta senang mengembangkan keterampilan melalui berbagai proyek dan pengalaman kepanitiaan.</p>
+          <a href="#projects" class="btn">Lihat Project</a>
+        </div>
+        <div class="profile-photo" data-aos="fade-left">
+          <img class="profile-img" src="img/Nabila.jpg" alt="Foto Nabila Husna Aulia">
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card" data-aos="fade-up">
+          <p>Saya adalah <span style="color: #ec4899;"><strong>mahasiswa semester 5 Sistem Informasi</strong></span> yang memiliki ketertarikan pada bidang teknologi informasi, desain grafis, dan pengembangan diri melalui organisasi.</p><br>
+          <p>Saat ini saya aktif sebagai Wakil Ketua Umum <strong>Himpunan Mahasiswa Sistem Informasi (HMSI).</strong> 
+            Peran ini memberikan kesempatan bagi saya untuk mengembangkan kemampuan kepemimpinan, komunikasi, koordinasi tim, serta manajemen organisasi melalui berbagai program kerja dan kegiatan kemahasiswaan.</p><br>
+          <p>Saya juga memiliki pengalaman dalam desain grafis dan pembuatan media publikasi digital. Saat ini saya terus belajar dan mengembangkan keterampilan di bidang teknologi serta desain untuk menciptakan solusi yang kreatif dan bermanfaat.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pengalaman Organisasi -->
+    <section id="organisasi">
+      <div class="container">
+        <h2 class="section-title">Organization Experience</h2>
+        <div class="org-grid">
+          <!-- Wakil Ketua Umum HMSI -->
+          <div class="org-card" data-aos="fade-up">
+            <div class="org-avatar">
+              <img src="img/hmsi.png" alt="Logo HMSI">
+            </div>
+            <div class="org-detail">
+              <h3>Himpunan Mahasiswa Sistem Informasi (HMSI)</h3>
+              <div class="org-position">Wakil Ketua Umum</div>
+              <span class="org-date">Februari 2026 - Sekarang</span>
+              <p>Membantu mengoordinasikan jalannya organisasi, mengawasi pelaksanaan program kerja, serta menjalin komunikasi dan kerja sama 
+                dengan berbagai pihak untuk mendukung keberlangsungan kegiatan HMSI.</p>
+            </div>
+          </div>
+          <!-- Anggota Divisi Minat Bakat  -->
+          <div class="org-card" data-aos="fade-up">
+            <div class="org-avatar">
+              <img src="img/hmsi.png" alt="Logo HMSI">
+            </div>
+            <div class="org-detail">
+              <h3>HMSI - Divisi Pengembangan Minat & Bakat</h3>
+              <div class="org-position">Anggota & Ketua Pelaksana</div>
+              <span class="org-date">Februari 2025 - November 2025</span>
+              <p>Berpartisipasi dalam berbagai program pengembangan mahasiswa serta dipercaya menjadi Ketua Pelaksana Visit Industri ke Jakarta Smart City. 
+                Bertanggung jawab mengoordinasikan panitia, menyusun perencanaan kegiatan, dan memastikan acara berjalan sesuai target.</p>
+            </div>
+          </div>
+          <!-- Serang Muda - Tim Desain -->
+          <div class="org-card" data-aos="fade-up">
+            <div class="org-avatar">
+              <img src="img/sermud.png" alt="Logo Serang Muda">
+            </div>
+            <div class="org-detail">
+              <h3>Serang Muda</h3>
+              <div class="org-position">Tim Desain & Dokumentasi</div>
+              <span class="org-date">2021 - 2023</span>
+              <p>Mendesain konten Instagram untuk kampanye sosial dan event kepemudaan. Beberapa kali membuat feed post, story, dan poster kegiatan.</p>
+            </div>
+          </div>
+          <!-- Paskibra SMAN 1 Tirtayasa -->
+          <div class="org-card" data-aos="fade-up">
+            <div class="org-avatar">
+              <img src="img/paskibra.png" alt="Logo Paskibra">
+            </div>
+            <div class="org-detail">
+              <h3>Paskibra SMAN 1 Tirtayasa</h3>
+              <div class="org-position">Sekretaris</div>
+              <span class="org-date">2022</span>
+              <p>Bertanggung jawab dalam pengelolaan administrasi organisasi, penyusunan proposal kegiatan, 
+                laporan pertanggungjawaban (LPJ), serta pengarsipan dokumen dan surat menyurat kepengurusan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Tools</h2>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: flex-start;">
+          <!-- Card Kiri: SKILL -->
+          <div class="skill-card-simple" data-aos="zoom-in">
+            <h3>SKILL</h3>
+            <div class="skills-badge-container">
+              <span class="skill-badge">Graphic Design</span>
+              <span class="skill-badge">Leadership</span>
+              <span class="skill-badge">Event Management</span>
+              <span class="skill-badge">Teamwork</span>
+              <span class="skill-badge">Administration</span>
+            </div>
+          </div>
+          <!-- Card Kanan: TOOLS -->
+          <div class="skill-card-simple" data-aos="zoom-in">
+            <h3>TOOLS</h3>
+            <div class="skills-badge-container">
+              <span class="skill-badge">Canva</span>
+              <span class="skill-badge">HTML</span>
+              <span class="skill-badge">Visual Studio Code</span>
+              <span class="skill-badge">Microsoft Office</span>
+              <span class="skill-badge">Pinterest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <!-- Pyoject 1 -->
+          <div class="project-card" data-aos="zoom-in">
+            <div class="project-img">
+              <img src="img/project1.png" alt="Project 1">
+            </div>
+            <div class="project-info">
+              <h3>Landing Page Katalog . WLDRNS</h3>
+              <p>Landing page katalog interaktif untuk brand fashion, dilengkapi fitur detail produk dan navigasi ke platform pembelian.</p>
+              <div class="project-stack"><span class="stack">HTML</span><span class="stack">CSS</span><span class="stack">JavaScript</span></div>
+              <a href="https://bulanebula.github.io/CatalogWLDRNS/">Detail</a>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card" data-aos="zoom-in">
+            <div class="project-img">
+              <img src="img/project2.png" alt="Project 2">
+            </div>
+            <div class="project-info">
+              <h3>Portofolio Short Class</h3>
+              <p>Proyek hasil penyelesaian Short Class Graphic Design Principles by MySkill yang menerapkan prinsip dasar desain, seperti keseimbangan,
+                 hirarki visual, kontras, dan pemilihan warna dalam pembuatan karya visual.</p>
+              <div class="project-stack"><span class="stack">Design</span><span class="stack">Graphic Design Principles</span></div>
+              <a href="https://bulanebula.github.io/Portofolio---Short-Class/">Detail</a>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card" data-aos="zoom-in">
+            <div class="project-img">
+              <img src="img/project3.jpg" alt="Project 3">
+            </div>
+            <div class="project-info">
+              <h3>Graphic Design</h3>
+              <p>Pembuatan media publikasi visual, termasuk poster acara dan konten Instagram untuk kebutuhan organisasi.</p>
+              <div class="project-stack"><span class="stack">Canva</span><span class="stack">Instagram</span></div>
+              <a href="https://bulanebula.github.io/Graphic-Design/">Detail</a>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="project-card" data-aos="zoom-in">
+            <div class="project-img">
+              <img src="img/project4.png" alt="Project 4">
+            </div>
+            <div class="project-info">
+              <h3>Visit Industri Jakarta Smart City</h3>
+              <p>Perencanaan dan pelaksanaan kegiatan kunjungan industri sebagai Ketua Pelaksana, meliputi koordinasi panitia, penyusunan dokumen kegiatan, dan komunikasi dengan pihak eksternal.</p>
+              <div class="project-stack"><span class="stack">Leadership</span><span class="stack">Event Management</span></div>
+              <a href="https://www.instagram.com/p/DK2JfG_P7EL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Detail</a>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div class="project-card" data-aos="zoom-in">
+            <div class="project-img">
+              <img src="img/project5.png" alt="Project 3">
+            </div>
+            <div class="project-info">
+              <h3>Personal Portfolio Website</h3>
+              <p>Website portofolio pribadi yang dibuat untuk menampilkan profil, pengalaman organisasi, keterampilan, dan proyek yang pernah dikerjakan dalam satu halaman responsif.</p>
+              <div class="project-stack"><span class="stack">HTML</span><span class="stack">CSS</span><span class="stack">JavaScript</span></div>
+              <a href="#home">Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-noform">
+          <h2>Let's Connect</h2>
+          <div class="contact-icons">
+            <a href="https://instagram.com/husnabilaulia" target="_blank" class="contact-icon-link"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:nabilahusnaaulia1145@gmail.com" class="contact-icon-link"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/nabilahusnaaulia" target="_blank" class="contact-icon-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/6283812344495" target="_blank" class="contact-icon-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          <p style="margin-top: 1rem; color:#aaa;">📍 Serang, Banten</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Nabila Husna Aulia | Information System Student | IT Enthusiast</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+  <!-- AOS JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, 
+      once: false,
+    });     
+  </script>
+</body>
+
